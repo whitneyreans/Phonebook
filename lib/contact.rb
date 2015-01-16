@@ -13,10 +13,26 @@ class Contact
 
   define_method(:add) do
     @@contacts.push(self)
+
   end
 
   define_singleton_method(:clear) do
     @@contacts = []
   end
-  
+
+  define_singleton_method(:list_names) do
+    names = []
+    @@contacts.each() do |entry|
+      names.push(entry.name())
+    end
+    names
+  end
+
+  define_method(:show_number) do |name|
+    if @name == name
+      return @number
+    end
+  end
+
+
 end

@@ -1,0 +1,16 @@
+<h1> Phonebook </h1>
+
+<h2> Enter a contact here: </h2>
+
+<form action="/contacts" method="post">
+  <label for='contact'>Person's name:</label>
+  <input id='contact' name='contact' type='text'>
+  <button type="submit">Add Contact</button>
+
+</form>
+
+<ul>
+  <% @contacts.each() do |contact| %>
+    <li><a href="/numbers/<%= contact.id() %>"><%= contact.name() %></a></li>
+  <% end %>
+</ul>
